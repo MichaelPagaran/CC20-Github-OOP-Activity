@@ -25,7 +25,7 @@ class TimeDuration {
 
     public TimeDuration(int totalSeconds) {
         if (totalSeconds < 0) {
-            throw new IllegalArgumentException("Invalid input: seconds cannot be negative.");
+            throw new IllegalArgumentException("Invalid input: seconds cannot be negative!");
         }
         this.hours = totalSeconds / 3600;
         this.minutes = (totalSeconds % 3600) / 60;

@@ -13,7 +13,7 @@ public class RandomOpeningGenerator implements ProgramInterface {
 
     public void run() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("♟️ Welcome to the Random Opening Generator!");
+        System.out.println("♟️ Welcome to the Random Opening Generator!!!");
         Random random = new Random();
         
         // All 20 legal starting moves for White

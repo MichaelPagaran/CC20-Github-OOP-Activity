@@ -1,0 +1,52 @@
+package programs.programname;
+
+import java.util.Scanner;
+import ProgramInterface;
+
+public class MyDateCalendar implements ProgramInterface {
+
+    public String getName() { return "My Date Calendar"; }
+    public String getDescription() { return "Shows the entire date of the calendar."; }
+    public String getAuthor() { return "Neil Sudaria"; }
+    
+
+    public void run() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Hello! This is your custom program.");
+        // Test the MyDate class
+        try {
+            MyDate today = new MyDate(2024, 1, 15);
+            System.out.println("Today: " + today);
+            
+            System.out.println("\nNext day: " + today.nextDay());
+            System.out.println("Next month: " + today.nextMonth());
+            System.out.println("Next year: " + today.nextYear());
+            
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+/**
+     * MyDate class represents a date with year, month, and day.
+     * This program provides methods to manipulate and retrieve date information.
+     *
+     * @author Neil Nino Rozen N. Sudaria
+     * Description: MyDate class with various date manipulation methods It includes validation for dates, leap year calculations, and methods to
+       move to the next or previous day, month, or year. 
+     */
+    static class MyDate {
+        // Instance variables to store year, month, and day
+        private int year;
+        private int month;
+        private int day;
+        
+        // Static final variables representing months, days, and days in months
+        public static final String[] MONTHS = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+                "Oct", "Nov", "Dec"};
+        public static final String[] DAYS = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+        public static final int[] DAY_IN_MONTHS = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+        // Constructor to initialize a MyDate object
+        public MyDate(int year, int month, int day) {
+            setDate(year, month, day);
+        }

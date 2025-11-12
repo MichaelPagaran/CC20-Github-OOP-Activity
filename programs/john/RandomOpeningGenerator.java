@@ -2,6 +2,7 @@ package programs.john;
 
 import java.util.Scanner;
 import core.ProgramInterface;
+import java.util.Random;
 
 // 🧩 TEMPLATE: Copy this to your own folder and modify values.
 public class RandomOpeningGenerator implements ProgramInterface {
@@ -12,7 +13,21 @@ public class RandomOpeningGenerator implements ProgramInterface {
 
     public void run() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Hello! This is your custom program.");
-        // Add your logic here
+        System.out.println("♟️ Welcome to the Random Opening Generator!");
+        Random random = new Random();
+        
+        // All 20 legal starting moves for White
+        String[] whiteMoves = {
+            "a3", "a4", "b3", "b4", "c3", "c4", "d3", "d4",
+            "e3", "e4", "f3", "f4", "g3", "g4", "h3", "h4",
+            "Na3", "Nc3", "Nf3", "Nh3"
+        };
+        
+        // All 20 legal starting moves for Black
+        String[] blackMoves = {
+            "a6", "a5", "b6", "b5", "c6", "c5", "d6", "d5",
+            "e6", "e5", "f6", "f5", "g6", "g5", "h6", "h5",
+            "Na6", "Nc6", "Nf6", "Nh6"
+        };
     }
 }

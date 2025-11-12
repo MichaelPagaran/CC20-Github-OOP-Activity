@@ -6,7 +6,6 @@ import core.ProgramInterface;
 import programs.fibonacci.FibonacciProgram;
 import programs.hanoi.HanoiProgram;
 import programs.palindrome.PalindromeProgram;
-import programs.hobbytracker.HobbyTrackerProgram;
 
 // Loads all available programs.
 // Students only need to ADD ONE LINE per new program in getPrograms().

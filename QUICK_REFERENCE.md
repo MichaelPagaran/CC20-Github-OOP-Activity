@@ -64,7 +64,7 @@ programs.add(new programs.martin.MyCoolProgram());
 
 ## 📁 Folder Structure Example
 ```bash
-programs/martin/MyCoolProgram.javaprograms/martin/MyCoolProgram.java
+programs/programname/progrclassname.java
 ```
 
 💡 Tips

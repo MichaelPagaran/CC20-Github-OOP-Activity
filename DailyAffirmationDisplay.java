@@ -4,13 +4,15 @@ import java.util.Arrays;
 import java.util.Random;
 import java.time.LocalDate;
 
-
+/**
+ * ProgramInterface: all programs implementing this must define run()
+ */
 interface ProgramInterface {
     void run();
 }
 
 /**
- * Program Name: Daily Affirmation Display
+ * DailyAffirmationDisplay Program
  *
  * Author: Louiza Beatrice L. Lim
  *
@@ -48,7 +50,6 @@ public class DailyAffirmationDisplay implements ProgramInterface {
 
         @Override
         public String getAffirmation() {
-            // Daily index based on day of the year
             int dayOfYear = LocalDate.now().getDayOfYear();
             currentAffirmation = affirmations.get(dayOfYear % affirmations.size());
             return currentAffirmation;
@@ -80,53 +81,49 @@ public class DailyAffirmationDisplay implements ProgramInterface {
 
     // --- IMPLEMENT THE INTERFACE ---
     @Override
-public void run() {
-    Scanner sc = new Scanner(System.in);
-    boolean keepRunning = true;
+    public void run() {
+        Scanner sc = new Scanner(System.in);
+        boolean keepRunning = true;
 
-    while (keepRunning) {
-        System.out.println("Choose affirmation mode: (1) Daily affirmation (2) Random)");
-        int choice = sc.nextInt();
-        sc.nextLine(); // consume leftover newline
+        while (keepRunning) {
+            System.out.println("\nChoose affirmation mode: (1) Daily affirmation (2) Random)");
+            int choice = sc.nextInt();
+            sc.nextLine(); // consume leftover newline
+            AffirmationSource source;
 
-        AffirmationSource source;
+            if (choice == 1) {
+                source = new StaticAffirmationSource();
+                source.displayAffirmation(); // show daily affirmation
+                System.out.print("Press Enter to return to mode selection, or type 'exit' to quit: ");
+                String input = sc.nextLine();
+                if (input.equalsIgnoreCase("exit")) {
+                    keepRunning = false;
+                }
 
-        if (choice == 1) {
-            source = new StaticAffirmationSource();
-            source.displayAffirmation(); // show daily affirmation
+            } else if (choice == 2) {
+                source = new RandomAffirmationSource();
+                char again;
+                do {
+                    source.displayAffirmation();
+                    System.out.print("Refresh for a new one? (y/n): ");
+                    again = sc.next().charAt(0);
+                    sc.nextLine(); // consume leftover newline
+                } while (again == 'y' || again == 'Y');
 
-            // ask if user wants to return to main menu
-            System.out.print("Press Enter to return to mode selection, or type 'exit' to quit: ");
-            String input = sc.nextLine();
-            if (input.equalsIgnoreCase("exit")) {
-                keepRunning = false;
+                System.out.print("Type 'exit' to quit, or press Enter to return to mode selection: ");
+                String input = sc.nextLine();
+                if (input.equalsIgnoreCase("exit")) {
+                    keepRunning = false;
+                }
+
+            } else {
+                System.out.println("Invalid choice. Please try again.");
             }
-
-        } else if (choice == 2) {
-            source = new RandomAffirmationSource();
-            char again;
-            do {
-                source.displayAffirmation();
-                System.out.print("Refresh for a new one? (y/n): ");
-                again = sc.next().charAt(0);
-                sc.nextLine(); // consume leftover newline
-            } while (again == 'y' || again == 'Y');
-
-            System.out.print("Type 'exit' to quit, or press Enter to return to mode selection: ");
-            String input = sc.nextLine();
-            if (input.equalsIgnoreCase("exit")) {
-                keepRunning = false;
-            }
-
-        } else {
-            System.out.println("Invalid choice. Please try again.");
         }
+
+        System.out.println("Have a wonderful day! 🌸");
+        sc.close();
     }
-
-    System.out.println("Have a wonderful day! 🌸");
-    sc.close();
-}
-
 
     // --- MAIN METHOD ---
     public static void main(String[] args) {

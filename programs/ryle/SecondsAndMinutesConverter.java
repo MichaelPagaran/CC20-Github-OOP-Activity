@@ -1,5 +1,17 @@
 import java.util.Scanner;
 
+/**
+ * Seconds and Minutes Converter
+ * This program converts a user-input value of total seconds into
+ * hours, minutes, and seconds format.
+ *
+ * Author: Frances Ryle Tan
+ * Description: Demonstrates basic OOP concepts by using a separate
+ * TimeDuration class that handles validation, conversion logic,
+ * and formatted output. Includes user input handling and exception
+ * management for invalid values.
+ */
+
 public class SecondsAndMinutesConverter {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -25,7 +37,7 @@ class TimeDuration {
 
     public TimeDuration(int totalSeconds) {
         if (totalSeconds < 0) {
-            throw new IllegalArgumentException("Invalid input: seconds cannot be negative!");
+            throw new IllegalArgumentException("Invalid input: seconds cannot be negative.");
         }
         this.hours = totalSeconds / 3600;
         this.minutes = (totalSeconds % 3600) / 60;

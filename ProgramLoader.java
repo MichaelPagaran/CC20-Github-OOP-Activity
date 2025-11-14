@@ -1,11 +1,6 @@
+import core.ProgramInterface;
 import java.util.ArrayList;
 import java.util.List;
-import core.ProgramInterface;
-
-// Import program classes to make their types known
-import programs.fibonacci.FibonacciProgram;
-import programs.hanoi.HanoiProgram;
-import programs.palindrome.PalindromeProgram;
 
 // Loads all available programs.
 // Students only need to ADD ONE LINE per new program in getPrograms().
@@ -19,6 +14,7 @@ public class ProgramLoader {
         programs.add(new programs.hanoi.HanoiProgram());
         programs.add(new programs.palindrome.PalindromeProgram());
         programs.add(new programs.knightstour.KnightsTourProgram());
+        programs.add(new programs.Segovia.petTracker());
 
         // Example: programs.add(new programs.[folder].[ClassName]());
         // Only one line per new program.

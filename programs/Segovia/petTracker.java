@@ -3,6 +3,15 @@ package programs.Segovia;
 import core.ProgramInterface;
 import java.util.*;
 
+<<<<<<< HEAD
+=======
+/**
+ * Description: House Pet Tracker is a program that allows users to keep track of their pets.
+ * Users can add, remove, and view their current and removed pets.
+ * Author: Prince Jan A. Segovia
+ */
+
+>>>>>>> develop
 public class petTracker implements ProgramInterface {
 
     public String getName() { return "House Pet Tracker"; }
@@ -174,5 +183,9 @@ class PetManager {
             System.out.println("- " + p.getName());
         }
     }
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> develop

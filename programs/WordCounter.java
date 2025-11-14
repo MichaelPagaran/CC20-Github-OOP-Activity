@@ -3,8 +3,11 @@ package programs.wordcounter;
 import core.ProgramInterface;
 import java.util.Scanner;
 /**
- * A simple program that counts the words in a user-provided string.
- * This class implements the ProgramInterface.
+ * Simple Word Counter demonstration.
+ * This program prompts the user for text, then counts and displays the number of words.
+ *
+ * Author: Peterson C. Pepito
+ * Description: Counts the number of words in a given text input.
  */
 public class WordCounter implements ProgramInterface {
 

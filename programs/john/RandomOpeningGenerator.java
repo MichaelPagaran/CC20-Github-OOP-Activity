@@ -4,7 +4,13 @@ import java.util.Scanner;
 import core.ProgramInterface;
 import java.util.Random;
 
-// 🧩 TEMPLATE: Copy this to your own folder and modify values.
+/**
+* A program that randomly selects which 
+* starting move to play for black or white pieces.
+* 
+* Author: John Ryan Uy 
+* Description: Randomly selects a legal starting move for black or white pieces in a game of Chess.
+*/ 
 public class RandomOpeningGenerator implements ProgramInterface {
 
     public String getName() { return "Random opening generator"; }
@@ -13,8 +19,14 @@ public class RandomOpeningGenerator implements ProgramInterface {
 
     public void run() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("♟️ Welcome to the Random Opening Generator!!!");
         Random random = new Random();
+        
+        System.out.println("Welcome to the Random Opening Generator!");
+        System.out.println("Select your side:");
+        System.out.println("1 = White");
+        System.out.println("2 = Black");
+        System.out.print("Enter choice: ");
+        int choice = sc.nextInt();
         
         // All 20 legal starting moves for White
         String[] whiteMoves = {
@@ -29,5 +41,6 @@ public class RandomOpeningGenerator implements ProgramInterface {
             "e6", "e5", "f6", "f5", "g6", "g5", "h6", "h5",
             "Na6", "Nc6", "Nf6", "Nh6"
         };
+        
     }
 }

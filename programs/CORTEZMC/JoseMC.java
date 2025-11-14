@@ -15,7 +15,7 @@ abstract class MobNameGenerator {
     public MobNameGenerator() {
         adjectives = new String[]{"Shadow", "Ancient", "Frost", "Storm", "Elder",
                                   "Crimson", "Thunder", "Phantom", "Obsidian", "Cursed",
-                                  "Savage", "Emerald", "Netherborn", "Iceborn"};
+                                  "Savage", "Emerald", "Netherborn", "Iceborn","SandBorn"};
         mobs = new String[]{"Creeper", "Enderman", "Skeleton", "Spider", "Guardian",
                             "Piglin", "Blaze", "Ghast", "Warden", "Drowned", "Shulker"};
         titles = new String[]{"of the Abyss", "the Unseen", "the Eternal", "of the Night",
@@ -39,7 +39,14 @@ class CoolMobNameGenerator extends MobNameGenerator {
         return name;
     }
 }
-
+/** This program generates unique and cool names for Minecraft mobs.
+ * The mob name is created by combining random adjectives, mob types, and titles.
+ * You can generate new names by pressing Enter, and exit the program by typing 'stop'.
+ * 
+ * Author: Jose Cortez
+ * Description: Minecraft Mob Name Generator
+ * 
+ */
 
 public class JoseMC implements ProgramInterface {
 

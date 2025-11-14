@@ -2,6 +2,7 @@ package programs.wordcounter;
 
 import core.ProgramInterface;
 import java.util.Scanner;
+
 /**
  * Simple Word Counter demonstration.
  * This program prompts the user for text, then counts and displays the number of words.
@@ -28,7 +29,7 @@ public class WordCounter implements ProgramInterface {
 
     /**
      * Runs the word counting logic.
-     * Prompts the user for text, then counts and displays the number of words.
+     * 
      */
     @Override
     public void run() {

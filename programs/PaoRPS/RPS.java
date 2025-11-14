@@ -3,6 +3,16 @@ package programs.PaoRPS;
 import java.util.*;
 import core.ProgramInterface;
 
+/**
+ * Rock Paper Scissors Game demonstration.
+ * This program allows the user to play a simple Rock-Paper-Scissors game
+ * against the computer. The game continues until either the player or the 
+ * computer reaches 5 points. Each round compares the user’s chosen move 
+ * against a randomly generated computer move to determine the winner.
+ *
+ * Author: Paul Rey A. Ysug 
+ * Description: A console-based RPS game that tracks score and determines a match winner.
+ */
 public class RPS implements ProgramInterface {
 
     @Override
@@ -17,7 +27,7 @@ public class RPS implements ProgramInterface {
 
     @Override
     public String getAuthor() {
-        return "Pao Ysug";
+        return "Paul Rey A. Ysug";
     }
 
     @Override

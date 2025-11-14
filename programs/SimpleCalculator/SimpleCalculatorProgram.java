@@ -1,7 +1,13 @@
 package programs.SimpleCalculator;
 
-import java.util.Scanner;
 import core.ProgramInterface;
+import java.util.Scanner;
+
+//**SimpleCalculator program performs basic addtion, 
+//subtraction, multiplication, division (with zero-check validation).
+
+//Author: Haiana Gracia Peregrino
+//Description: Part of the CC20 GitHub OOP Activity project.
 
 public class SimpleCalculatorProgram implements ProgramInterface {
 

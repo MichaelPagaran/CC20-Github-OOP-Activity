@@ -1,12 +1,6 @@
+import core.ProgramInterface;
 import java.util.ArrayList;
 import java.util.List;
-import core.ProgramInterface;
-
-// Import program classes to make their types known
-import programs.fibonacci.FibonacciProgram;
-import programs.hanoi.HanoiProgram;
-import programs.palindrome.PalindromeProgram;
-import programs.SimpleCalculator.SimpleCalculatorProgram;
 
 // Loads all available programs.
 // Students only need to ADD ONE LINE per new program in getPrograms().

@@ -5,12 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// Simple Hobby class
+
 class Hobby {
     private String name;
     private int frequencyPerWeek;
     private int progress;
     private String goal;
+
 
     public Hobby(String name, int frequencyPerWeek, String goal) {
         this.name = name;
@@ -22,10 +23,6 @@ class Hobby {
     public void updateProgress(int additionalProgress) {
         progress += additionalProgress;
         if (progress > 100) progress = 100;
-    }
-
-    public void setFrequencyPerWeek(int frequencyPerWeek) {
-        this.frequencyPerWeek = frequencyPerWeek;
     }
 
     public String getName() {
@@ -42,7 +39,15 @@ class Hobby {
     }
 }
 
-// Program class implementing ProgramInterface
+/**
+ * Hobby Tracker's demonstration
+ * A program that allows users to track their hobbies,
+ * update their progress, and monitor their weekly frequency goals.
+ *
+ * Author: Trishya Sofia Marie B. Dadole
+ * Description: Demonstrates how a hobby is tracked.
+ *
+ */
 public class HobbyTrackerProgram implements ProgramInterface {
 
     @Override
@@ -65,7 +70,7 @@ public class HobbyTrackerProgram implements ProgramInterface {
         Scanner scanner = new Scanner(System.in);
         List<Hobby> hobbies = new ArrayList<>();
 
-        // Add some default hobbies
+        // Add sample default hobbies
         hobbies.add(new Hobby("Running", 3, "Run 5km without stopping"));
         hobbies.add(new Hobby("Reading", 5, "Finish 10 books this year"));
         hobbies.add(new Hobby("Coding", 4, "Complete a mini-project each month"));
@@ -77,26 +82,38 @@ public class HobbyTrackerProgram implements ProgramInterface {
             System.out.println("2. Update progress");
             System.out.println("3. Exit");
             System.out.print("Enter choice: ");
+
             int choice = scanner.nextInt();
             scanner.nextLine(); // consume newline
 
             switch (choice) {
+
+                /**
+                 * Option 1: Display all hobbies and their details.
+                 */
                 case 1:
                     System.out.println("\n--- All Hobbies ---");
                     for (Hobby h : hobbies) {
                         System.out.println(h);
                     }
                     break;
+
+                /**
+                 * Option 2: Allow users to update progress and frequency of a hobby.
+                 */
                 case 2:
                     System.out.print("Enter hobby name: ");
                     String name = scanner.nextLine();
+
                     System.out.print("Enter progress to add (%): ");
                     int progress = scanner.nextInt();
+
                     System.out.print("Enter new frequency per week: ");
                     int freq = scanner.nextInt();
                     scanner.nextLine(); // consume newline
 
                     boolean found = false;
+
                     for (Hobby h : hobbies) {
                         if (h.getName().equalsIgnoreCase(name)) {
                             h.updateProgress(progress);
@@ -106,19 +123,28 @@ public class HobbyTrackerProgram implements ProgramInterface {
                             break;
                         }
                     }
+
                     if (!found) {
                         System.out.println("Hobby not found.");
                     }
                     break;
+
+                /**
+                 * Option 3: Exit the program.
+                 */
                 case 3:
                     exit = true;
                     System.out.println("Exiting Hobby Tracker...");
                     break;
+
+                /**
+                 * Handles invalid menu choices.
+                 */
                 default:
                     System.out.println("Invalid choice, try again.");
             }
         }
 
-        // scanner.close(); // optional, sometimes ProgramLoader handles System.in
+        scanner.close();
     }
 }

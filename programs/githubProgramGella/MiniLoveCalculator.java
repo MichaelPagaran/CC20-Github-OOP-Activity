@@ -4,6 +4,18 @@ import java.util.Scanner;
 import java.util.Random;
 import ProgramInterface;
 
+/**
+ * Mini Love Calculator demonstration.
+ * This program collects two names and generates a randomized
+ * compatibility percentage to simulate a playful "love score."
+ *
+ * Author: Gella Ramirez
+ * Description: Implements basic user input handling and randomization
+ *              to calculate and display a compatibility score.
+ */
+
+
+ 
 // Mini Love Calculator Program
 public class MiniLoveCalculator implements ProgramInterface {
 

@@ -19,6 +19,7 @@ public class ProgramLoader {
         programs.add(new programs.hanoi.HanoiProgram());
         programs.add(new programs.palindrome.PalindromeProgram());
         programs.add(new programs.knightstour.KnightsTourProgram());
+	programs.add(new programs.annika.Quilang_TicTacToe());
 
         // Example: programs.add(new programs.[folder].[ClassName]());
         // Only one line per new program.

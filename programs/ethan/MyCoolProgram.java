@@ -4,6 +4,20 @@ import java.util.Scanner;
 import core.ProgramInterface;
 import java.util.Scanner;
 
+/**
+*Simple square root finder
+*This program automatically calculates the square root of your number.
+*Author: Ethan Kyle C. Anggot
+*Description: calculates the square root of a number
+*/
+
+
+
+
+
+
+
+
 // 🧩 TEMPLATE: Copy this to your own folder and modify values.
 public class MyCoolProgram implements ProgramInterface {
 

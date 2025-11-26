@@ -1,0 +1,51 @@
+package programs.gella;
+
+import java.util.Scanner;
+import java.util.Random;
+import core.ProgramInterface; 
+
+/**
+ * Mini Love Calculator demonstration.
+ * This program collects two names and generates a randomized
+ * compatibility percentage to simulate a playful "love score."
+ *
+ * Author: Gella Ramirez
+ * Description: Implements basic user input handling and randomization
+ *              to calculate and display a compatibility score.
+ */
+public class MiniLoveCalculator implements ProgramInterface {
+
+    @Override
+    public String getName() {
+        return "Mini Love Calculator";
+    }
+
+    @Override
+    public String getDescription() {
+        return "A program that calculates love compatibility between two names using randomization.";
+    }
+
+    @Override
+    public String getAuthor() {
+        return "Gella";
+    }
+
+    @Override
+    public void run() {
+        Scanner sc = new Scanner(System.in);
+        Random random = new Random();
+
+        System.out.println("❤️ Welcome to the Mini Love Calculator! ❤️");
+        System.out.print("Enter your name: ");
+        String name1 = sc.nextLine();
+
+        System.out.print("Enter your partner's name: ");
+        String name2 = sc.nextLine();
+
+        int loveScore = random.nextInt(101); // 0–100
+
+        System.out.println("\n💖 Love compatibility for " + name1 + " and " + name2 + " is: " + loveScore + "% 💖");
+
+        sc.close();
+    }
+}

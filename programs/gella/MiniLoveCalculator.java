@@ -1,4 +1,4 @@
-package programs.githubProgramGella;
+package programs.gella;
 
 import java.util.Scanner;
 import java.util.Random;
@@ -47,10 +47,5 @@ public class MiniLoveCalculator implements ProgramInterface {
         System.out.println("\n💖 Love compatibility for " + name1 + " and " + name2 + " is: " + loveScore + "% 💖");
 
         sc.close();
-    }
-
-    public static void main(String[] args) {
-        MiniLoveCalculator calculator = new MiniLoveCalculator();
-        calculator.run();
     }
 }
